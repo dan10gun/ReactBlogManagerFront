@@ -26,15 +26,13 @@ export const FavouriteBlogs = () => {
             ...request
           }
         });
-        console.log("request:", request);
-        console.log(response);
+        
         setPosts(response.data.posts);
       } catch (err) {
         console.log(err);
       }
     };
     fetchData();
-    console.log("request at the end:", request);
   }, [request]);
 
     return (

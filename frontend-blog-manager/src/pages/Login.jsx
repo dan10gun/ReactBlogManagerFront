@@ -20,7 +20,6 @@ const Login = () => {
             ...request,
           },
         });
-        // const response = await blogApi.post("/Login",request);
 
         if (response.data.isSuccess) {
           alert("Login Successful");

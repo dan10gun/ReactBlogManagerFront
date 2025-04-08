@@ -28,14 +28,13 @@ export const AllBlogs = () => {
               ...request
             }
           });
-        console.log(response.data.posts);
+        
         setPosts(response.data.posts);
       } catch (err) {
         console.log(err);
       }
     };
     fetchData();
-    console.log("request at the end:", request);
   }, [request]);
 
   const handleCreatePost = () => {

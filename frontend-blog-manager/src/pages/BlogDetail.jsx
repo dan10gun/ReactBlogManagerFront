@@ -52,7 +52,6 @@ export const BlogDetail = () => {
 
     try {
         const response = await blogApi.post("/CreateBlog", request);
-        console.log(response)
         if (response.data.isSuccess) {
           alert("Post created successfully!");
           navigate("/AllBlogs");

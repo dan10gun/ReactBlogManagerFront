@@ -13,7 +13,7 @@ export const PostCard = ({ posts }) => {
             onClick={() => navigate('/BlogDetail', { state: { post } })}
             style={{
               cursor: "pointer",
-              height: "30vh", // Sets height to 30% of viewport height
+              height: "30vh",
             }}
           >
             <div className="card-body d-flex flex-column">
