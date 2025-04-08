@@ -1,3 +1,5 @@
+npm start     to run project
+-------------------------------
 packages needed:
 
 npm install react-router-dom

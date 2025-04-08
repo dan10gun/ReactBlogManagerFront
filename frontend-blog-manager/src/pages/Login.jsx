@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import blogApi from "../api/blogApi";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -15,15 +15,12 @@ const Login = () => {
     };
     const fetchData = async () => {
       try {
-        const response = await blogApi.get("/Login", {
-          params: {
-            ...request,
-          },
-        });
+        const response = await blogApi.post("/Login",request);
 
         if (response.data.isSuccess) {
           localStorage.setItem('StoreUserId', response.data.logins[0].userId);          
           alert("Login Successful");
+          onLogin();
           navigate("/AllBlogs");
         } else {
           alert(`${response.data.message}`);
