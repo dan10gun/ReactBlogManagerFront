@@ -22,6 +22,7 @@ const Login = () => {
         });
 
         if (response.data.isSuccess) {
+          localStorage.setItem('StoreUserId', response.data.logins[0].userId);          
           alert("Login Successful");
           navigate("/AllBlogs");
         } else {
